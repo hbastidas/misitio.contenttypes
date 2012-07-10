@@ -1,0 +1,28 @@
+Metadata-Version: 1.0
+Name: misitio.contenttypes
+Version: 0.01
+Summary: tipos de contenido para mi sitio
+Home-page: https://github.com/hbastidas/misitio.contenttypes
+Author: Heber Bastidas
+Author-email: heberbastidas@gmail.com
+License: GPL version 2
+Description: Introduction
+        ============
+        
+        tipos de contenidos dados en curso de plone
+        
+        This product may contain traces of nuts.
+        
+        Changelog
+        =========
+        
+        0.01dev (unreleased)
+        --------------------
+        
+        - Initial release
+        
+Keywords: types content
+Platform: UNKNOWN
+Classifier: Framework :: Plone
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
