@@ -1,9 +1,17 @@
 import unittest2 as unittest
 
+from AccessControl import Unauthorized
+
+from plone.i18n.normalizer import idnormalizer
+from Products.ATContentTypes.lib import constraintypes
+
 from Products.CMFCore.utils import getToolByName
 
 from misitio.contenttypes.testing import\
     MISITIO_CONTENTTYPES_INTEGRATION_TESTING
+
+from plone.app.testing import TEST_USER_ID
+from plone.app.testing import setRoles
 
 
 class TestContent(unittest.TestCase):
@@ -31,8 +39,22 @@ class TestContent(unittest.TestCase):
         self.assertTrue('miembro' in existing)
 
     def test_consejo_comunal_allowed_content_types(self):
-        folder = self.types.objectIds()
-        allowed_types = ('miembro', ) 
-        elementos = folder[concejo_comunal].getImmediatelyAddableTypes(allowed_types)
-        self.assertTrue('miembro' in elementos)
+
+        setRoles(self.portal, TEST_USER_ID, ['Manager'])
+
+        oid = idnormalizer.normalize("consejos comunales", 'es')
+        self.portal.invokeFactory('concejo_comunal', id=oid, title='prueba consejo comunal')
+        self.folder = self.portal[oid]
+        types = ['miembro',]
+        allowed_types = [t.getId() for t in self.folder.allowedContentTypes()]
+        for t in types:
+            self.assertTrue(t in allowed_types)
+        
+		# trying to add any other content type raises an error
+        self.assertRaises(ValueError,
+                          self.folder.invokeFactory, 'Document', 'Registro legal')
+        try:
+            self.folder.invokeFactory('miembro', 'leonardo caballero')
+        except Unauthorized:
+            self.fail()
 

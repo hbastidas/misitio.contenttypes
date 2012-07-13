@@ -12,4 +12,7 @@ misitio.contenttypes.egg-info/paster_plugins.txt
 misitio.contenttypes.egg-info/requires.txt
 misitio.contenttypes.egg-info/top_level.txt
 misitio/contenttypes/__init__.py
-misitio/contenttypes/tests.py
+misitio/contenttypes/config.py
+misitio/contenttypes/testing.py
+misitio/contenttypes/tests/__init__.py
+misitio/contenttypes/tests/test_content.py
