@@ -1,7 +1,8 @@
 # -*- coding:  utf-8 -*-
-
+from five import grok
 from zope import schema
 from plone.directives import form
+from Products.CMFCore.utils import getToolByName
 
 class Imiembro(form.Schema):
     nombre = schema.TextLine(
@@ -39,3 +40,14 @@ class Imiembro(form.Schema):
         description = u"telefono de contacto",
         required = False,
     )
+
+grok.templatedir('miembro_templates')
+
+class View(grok.View):
+    """
+    registrando una vista basada en grok para conectarse al esquema concejo comunal.
+    """
+    grok.context(Imiembro)
+    grok.require("zope2.View")
+    grok.template("view")
+

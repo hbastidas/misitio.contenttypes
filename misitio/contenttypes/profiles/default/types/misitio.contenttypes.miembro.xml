@@ -5,6 +5,7 @@
  <property name="description"
     i18n:translate="">DESCRIPCION DEL MIEMBRO</property>
  <property name="icon_expr">string:${portal_url}/document_icon.png</property>
+ <property name="immediate_view">view</property>
  <property name="global_allow">False</property>
  <property name="filter_content_types">True</property>
  <property name="allowed_content_types"/>
@@ -18,6 +19,7 @@
  <property name="klass">plone.dexterity.content.Item</property>
  <property name="behaviors">
   <element value="plone.app.content.interfaces.INameFromTitle"/>
+  <element value="plone.app.dexterity.behaviors.metadata.IBasic"/>
  </property>
  <property name="schema">misitio.contenttypes.miembro.Imiembro</property>
  <!--<property name="model_file">misitio.contenttypes:models/miembro.xml</property>-->
