@@ -4,7 +4,7 @@
  <property name="title" i18n:translate="">concejo comunal</property>
  <property name="description"
     i18n:translate="">DESCRIPCION DEL CONCEJO COMUNAL</property>
- <property name="icon_expr">string:${portal_url}/folder_icon.png</property>
+ <property name="content_icon">++resource++misitio.contenttypes/rss.png</property>
  <property name="immediate_view">view</property>
  <property name="global_allow">True</property>
  <property name="filter_content_types">True</property>

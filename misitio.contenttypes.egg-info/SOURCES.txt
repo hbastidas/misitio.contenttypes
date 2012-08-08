@@ -15,6 +15,8 @@ misitio/contenttypes/__init__.py
 misitio/contenttypes/concejo_comunal.py
 misitio/contenttypes/config.py
 misitio/contenttypes/hello.py
+misitio/contenttypes/helloviewlet.py
+misitio/contenttypes/hellozope.py
 misitio/contenttypes/miembro.py
 misitio/contenttypes/testing.py
 misitio/contenttypes/tests/__init__.py
